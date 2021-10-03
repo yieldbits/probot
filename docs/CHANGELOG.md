@@ -1,3 +1,10 @@
+# [1.0.0-alpha.5](https://github.com/nestjs-shared/probot/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2021-10-03)
+
+
+### Bug Fixes
+
+* **ci:** build before release ([766837d](https://github.com/nestjs-shared/probot/commit/766837dceac7b8ef5901262beec0a21863b1dcf2))
+
 # [1.0.0-alpha.4](https://github.com/nestjs-shared/probot/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2021-10-03)
 
 
