@@ -1,3 +1,10 @@
+# [1.0.0-alpha.4](https://github.com/nestjs-shared/probot/compare/v1.0.0-alpha.3...v1.0.0-alpha.4) (2021-10-03)
+
+
+### Features
+
+* **lib:** add hook decorators to receive github events ([22b3485](https://github.com/nestjs-shared/probot/commit/22b34856d380babc2d953a62a794d1e469ed324c))
+
 # [1.0.0-alpha.3](https://github.com/nestjs-shared/probot/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2021-10-03)
 
 
