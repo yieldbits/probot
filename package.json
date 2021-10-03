@@ -10,14 +10,13 @@
     "commit": "git add . && cz",
     "format": "prettier **/**/*.ts --ignore-path ./.prettierignore --write",
     "lint": "eslint 'lib/**/*.ts' --fix",
-    "prepublish:npm": "npm run build",
-    "publish:npm": "npm publish --access public",
-    "prepublish:next": "npm run build",
-    "publish:next": "npm publish --access public --tag next",
+    "prepublish": "yarn build",
     "test:integration": "jest --config ./tests/jest-e2e.json --runInBand",
-    "prerelease": "npm run build",
     "release": "semantic-release"
   },
+  "files": [
+    "dist"
+  ],
   "dependencies": {
     "uuid": "8.3.2"
   },
