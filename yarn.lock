@@ -895,7 +895,7 @@ __metadata:
     commitizen: ^4.2.4
     cz-conventional-changelog: ^3.3.0
     dotenv: ^10.0.0
-    eslint: 7.32.0
+    eslint: ^7.32.0
     eslint-config-prettier: ^8.3.0
     eslint-plugin-import: 2.24.2
     express: ^4.17.1
@@ -4507,7 +4507,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:7.32.0":
+"eslint@npm:^7.32.0":
   version: 7.32.0
   resolution: "eslint@npm:7.32.0"
   dependencies:
