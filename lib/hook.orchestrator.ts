@@ -12,6 +12,8 @@ import { EmitterWebhookEventName } from '@octokit/webhooks/dist-types/types';
 import { Probot } from 'probot';
 import { getPrivateKey } from '@probot/get-private-key';
 import * as dotenv from 'dotenv';
+import SmeeClient from 'smee-client';
+
 dotenv.config();
 
 @Injectable()
@@ -23,6 +25,8 @@ export class HookOrchestrator
   private readonly hooks: Record<string, any> = {};
 
   private readonly probot: Probot;
+
+  private smee: any;
 
   constructor(
     private readonly hookRegistry: HookRegistry,
@@ -38,6 +42,15 @@ export class HookOrchestrator
   }
 
   onApplicationBootstrap(): any {
+    if (!_.isEmpty(process.env.WEBHOOK_PROXY_URL)) {
+      this.smee = new SmeeClient({
+        source: process.env.WEBHOOK_PROXY_URL as string,
+        target: process.env.WEBHOOK_PATH as string,
+        logger: console
+      });
+      this.smee.start();
+    }
+
     this.mountHooks();
   }
 
