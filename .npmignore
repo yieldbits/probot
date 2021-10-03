@@ -5,6 +5,7 @@ index.ts
 package-lock.json
 tsconfig.json
 .prettierrc
+.yarn
 
 # github
 .github
@@ -21,3 +22,5 @@ CONTRIBUTING.md
 renovate.json
 .prettierignore
 .prettierrc
+yarn.lock
+.yarnrc.yml
