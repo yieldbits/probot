@@ -73,6 +73,9 @@
       "pre-commit": "lint-staged"
     }
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/nestjs-shared/probot"
