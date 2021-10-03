@@ -1,3 +1,10 @@
+# [1.0.0-alpha.3](https://github.com/nestjs-shared/probot/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2021-10-03)
+
+
+### Bug Fixes
+
+* **publish:** change access to public ([fc4c0d6](https://github.com/nestjs-shared/probot/commit/fc4c0d6796a460343c422ac6174d418d5343cafc))
+
 # [1.0.0-alpha.2](https://github.com/nestjs-shared/probot/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2021-10-03)
 
 
