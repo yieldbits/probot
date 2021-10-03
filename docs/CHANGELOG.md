@@ -1,3 +1,10 @@
+# [1.0.0-alpha.6](https://github.com/nestjs-shared/probot/compare/v1.0.0-alpha.5...v1.0.0-alpha.6) (2021-10-03)
+
+
+### Features
+
+* **probot:** add support for using smee client ([8aa207f](https://github.com/nestjs-shared/probot/commit/8aa207f808072a37f9bba639c172c688d970d063))
+
 # [1.0.0-alpha.5](https://github.com/nestjs-shared/probot/compare/v1.0.0-alpha.4...v1.0.0-alpha.5) (2021-10-03)
 
 
