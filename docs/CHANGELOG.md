@@ -1,3 +1,10 @@
+## [1.2.1](https://github.com/nestjs-shared/probot/compare/v1.2.0...v1.2.1) (2021-10-19)
+
+
+### Bug Fixes
+
+* **config:** inject missing hook providers ([e0fc386](https://github.com/nestjs-shared/probot/commit/e0fc386cddb1308e0f305bf269e5fbfbe505ca60))
+
 # [1.2.0](https://github.com/nestjs-shared/probot/compare/v1.1.1...v1.2.0) (2021-10-19)
 
 
