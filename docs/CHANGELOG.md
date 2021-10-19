@@ -1,3 +1,10 @@
+# [1.2.0](https://github.com/nestjs-shared/probot/compare/v1.1.1...v1.2.0) (2021-10-19)
+
+
+### Features
+
+* **config:** add option to load module as global ([bd52afd](https://github.com/nestjs-shared/probot/commit/bd52afde00a895fe70ba1d6d148801e376aac71a))
+
 ## [1.1.1](https://github.com/nestjs-shared/probot/compare/v1.1.0...v1.1.1) (2021-10-19)
 
 
