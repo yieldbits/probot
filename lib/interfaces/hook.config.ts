@@ -1,3 +1,5 @@
+import { ModuleMetadata, Type } from '@nestjs/common';
+
 export interface HookConfig {
   /**
    * @property
@@ -52,4 +54,15 @@ export interface HookConfig {
    * Github client secret
    */
   clientSecret: string;
+}
+
+export interface HookConfigFactory {
+  createConfig(): Promise<HookConfig> | HookConfig;
+}
+
+export interface HookModuleAsyncOptions extends Pick<ModuleMetadata, 'imports'> {
+  useExisting?: Type<HookConfigFactory>;
+  useClass?: Type<HookConfigFactory>;
+  useFactory?: (...args: any[]) => Promise<HookConfig> | HookConfig;
+  inject?: any[];
 }

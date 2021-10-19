@@ -1,1 +1,3 @@
 export const HOOK_EVENTS = 'HOOK_EVENTS';
+export const HOOK_MODULE_ID = 'HOOK_MODULE_ID';
+export const HOOK_MODULE_OPTIONS = 'HOOK_MODULE_OPTIONS';
