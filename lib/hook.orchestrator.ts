@@ -9,10 +9,8 @@ import { v4 } from 'uuid';
 import { Request } from 'express';
 import { HookRegistry } from './hook.registry';
 import { EmitterWebhookEventName } from '@octokit/webhooks/dist-types/types';
-import { Probot } from 'probot';
-import { getPrivateKey } from '@probot/get-private-key';
 import * as dotenv from 'dotenv';
-import SmeeClient from 'smee-client';
+import { HookService } from './hook.service';
 
 dotenv.config();
 
@@ -24,31 +22,14 @@ export class HookOrchestrator
 
   private readonly hooks: Record<string, any> = {};
 
-  private readonly probot: Probot;
-
-  private smee: any;
-
   constructor(
     private readonly hookRegistry: HookRegistry,
-  ) {
-    this.probot = new Probot({
-      appId: process.env.APP_ID,
-      privateKey: getPrivateKey({
-        env: { PRIVATE_KEY: process.env.PRIVATE_KEY },
-      }) as string,
-      secret: process.env.WEBHOOK_SECRET,
-      baseUrl: process.env.GH_URL,
-    });
-  }
+    private readonly hookService: HookService,
+  ) {}
 
   onApplicationBootstrap(): any {
-    if (!_.isEmpty(process.env.WEBHOOK_PROXY_URL)) {
-      this.smee = new SmeeClient({
-        source: process.env.WEBHOOK_PROXY_URL as string,
-        target: process.env.WEBHOOK_PATH as string,
-        logger: console
-      });
-      this.smee.start();
+    if (!_.isEmpty(this.hookService.config('webhookProxy'))) {
+      this.hookService.startProxy();
     }
 
     this.mountHooks();
@@ -60,16 +41,20 @@ export class HookOrchestrator
   }
 
   mountHooks() {
-    this.probot
-      .load((app: { on: (arg0: any, arg1: (context: any) => Promise<void>) => any; }) => {
-        _.each(this.hooks, (options, key) => {
-          options.ref = app.on(
-            options.eventOrEvents,
-            this.initContext(options.target),
-          );
-          this.hookRegistry.addHook(key, options.ref);
-        });
-      })
+    this.hookService.probot
+      .load(
+        (app: {
+          on: (arg0: any, arg1: (context: any) => Promise<void>) => any;
+        }) => {
+          _.each(this.hooks, (options, key) => {
+            options.ref = app.on(
+              options.eventOrEvents,
+              this.initContext(options.target),
+            );
+            this.hookRegistry.addHook(key, options.ref);
+          });
+        },
+      )
       .then(() => {
         this.logger.log('Hook event listeners initialized');
       })

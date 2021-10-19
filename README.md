@@ -8,13 +8,21 @@ Probot module for [Nest](https://github.com/nestjs/nest) based on the [probot](h
 
 ## Installation
 
+### Using NPM
+
 ```bash
 $ npm i --save @nestjs-shared/probot
 ```
 
+### Using Yarn
+
+```bash
+$ yarn add @nestjs-shared/probot
+```
+
 ## Quick Start
 
-[Overview & Tutorial](https://docs.nestjs.com/techniques/task-scheduling)
+[Overview & Tutorial](https://docs.nestjs.com)
 
 ## Support
 

@@ -5,6 +5,8 @@ import { HookExplorer } from './hook.explorer';
 import { HookOrchestrator } from './hook.orchestrator';
 import { HookRegistry } from './hook.registry';
 import { HookController } from './hook.controller';
+import { HookConfig } from './interfaces';
+import { HookService } from './hook.service';
 
 @Module({
   imports: [DiscoveryModule],
@@ -12,10 +14,15 @@ import { HookController } from './hook.controller';
   controllers: [HookController],
 })
 export class HookModule {
-  static forRoot(): DynamicModule {
+  static forRoot(config: HookConfig): DynamicModule {
     return {
       module: HookModule,
-      providers: [HookExplorer, HookRegistry],
+      providers: [
+        { provide: 'HOOK_CONFIG', useValue: config },
+        HookExplorer,
+        HookRegistry,
+      ],
+      exports: [HookService],
     };
   }
 }
