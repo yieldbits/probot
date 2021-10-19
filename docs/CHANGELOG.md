@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/nestjs-shared/probot/compare/v1.0.0...v1.1.0) (2021-10-19)
+
+
+### Features
+
+* **lib:** add ability to pass config during init ([1c7f57e](https://github.com/nestjs-shared/probot/commit/1c7f57e74fb81117bf7de373e5d0d0934fe0c482))
+
 # 1.0.0 (2021-10-03)
 
 
