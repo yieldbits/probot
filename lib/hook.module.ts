@@ -21,8 +21,9 @@ import { generateString, mergeDefaults } from './hook.utils';
   controllers: [HookController],
 })
 export class HookModule {
-  static forRoot(config: HookConfig): DynamicModule {
+  static forRoot(config: HookConfig, global = false): DynamicModule {
     return {
+      global,
       module: HookModule,
       providers: [
         { provide: 'HOOK_CONFIG', useValue: config },
@@ -33,8 +34,9 @@ export class HookModule {
     };
   }
 
-  static forRootAsync(options: HookModuleAsyncOptions): DynamicModule {
+  static forRootAsync(options: HookModuleAsyncOptions, global = false): DynamicModule {
     return {
+      global,
       module: HookModule,
       imports: options.imports,
       providers: [
