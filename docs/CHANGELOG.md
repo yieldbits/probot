@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/nestjs-shared/probot/compare/v1.1.0...v1.1.1) (2021-10-19)
+
+
+### Bug Fixes
+
+* **config:** add async config providers ([011e205](https://github.com/nestjs-shared/probot/commit/011e2053489bc2154b4c2faf3e6d199444a7b24c))
+
 # [1.1.0](https://github.com/nestjs-shared/probot/compare/v1.0.0...v1.1.0) (2021-10-19)
 
 
