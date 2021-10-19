@@ -60,7 +60,8 @@ export interface HookConfigFactory {
   createConfig(): Promise<HookConfig> | HookConfig;
 }
 
-export interface HookModuleAsyncOptions extends Pick<ModuleMetadata, 'imports'> {
+export interface HookModuleAsyncOptions
+  extends Pick<ModuleMetadata, 'imports'> {
   useExisting?: Type<HookConfigFactory>;
   useClass?: Type<HookConfigFactory>;
   useFactory?: (...args: any[]) => Promise<HookConfig> | HookConfig;

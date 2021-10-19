@@ -34,7 +34,10 @@ export class HookModule {
     };
   }
 
-  static forRootAsync(options: HookModuleAsyncOptions, global = false): DynamicModule {
+  static forRootAsync(
+    options: HookModuleAsyncOptions,
+    global = false,
+  ): DynamicModule {
     return {
       global,
       module: HookModule,
@@ -58,7 +61,8 @@ export class HookModule {
 
     return [
       this.createAsyncOptionsProvider(options),
-      { // @ts-ignore
+      {
+        // @ts-ignore
         provide: options.useClass,
         // @ts-ignore
         useClass: options.useClass,
@@ -72,17 +76,25 @@ export class HookModule {
     if (options.useFactory) {
       return {
         provide: HOOK_MODULE_OPTIONS,
-        useFactory: async (...args: any[]) => // @ts-ignore
-          mergeDefaults(await options.useFactory(...args)),
-        inject: options.inject || [],
+        useFactory: async (
+          ...args: any[] // @ts-ignore
+        ) => mergeDefaults(await options.useFactory(...args)),
+        inject: [...(options.inject as any[]), HookExplorer, HookRegistry] || [
+          HookExplorer,
+          HookRegistry,
+        ],
       };
     }
     return {
       provide: HOOK_MODULE_OPTIONS,
       useFactory: async (optionsFactory: HookConfigFactory) =>
         mergeDefaults(await optionsFactory.createConfig()),
-      // @ts-ignore
-      inject: [options.useExisting || options.useClass],
+      inject: [
+        // @ts-ignore
+        ...(options.useExisting || options.useClass),
+        HookExplorer,
+        HookRegistry,
+      ],
     };
   }
 }
