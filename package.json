@@ -1,6 +1,6 @@
 {
   "name": "@nestjs-shared/probot",
-  "version": "1.4.1",
+  "version": "1.4.2",
   "description": "Nest - modern, fast, powerful node.js web framework (@probot)",
   "author": "Akshay Singh",
   "license": "MIT",

@@ -1,3 +1,10 @@
+## [1.4.2](https://github.com/nestjs-shared/probot/compare/v1.4.1...v1.4.2) (2021-10-20)
+
+
+### Bug Fixes
+
+* **config:** set default github url ([c56c56e](https://github.com/nestjs-shared/probot/commit/c56c56eb552f3dafe7badbeda30452581378b93d))
+
 ## [1.4.1](https://github.com/nestjs-shared/probot/compare/v1.4.0...v1.4.1) (2021-10-20)
 
 
