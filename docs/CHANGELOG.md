@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/nestjs-shared/probot/compare/v1.3.0...v1.3.1) (2021-10-20)
+
+
+### Bug Fixes
+
+* **proxy:** start smee client on WEBHOOK_PROXY presence ([b77d42e](https://github.com/nestjs-shared/probot/commit/b77d42e4db21ad07a7e4f4177de9c6c36097a24b))
+
 # [1.3.0](https://github.com/nestjs-shared/probot/compare/v1.2.3...v1.3.0) (2021-10-20)
 
 
