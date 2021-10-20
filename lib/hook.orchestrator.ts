@@ -10,12 +10,9 @@ import { Request } from 'express';
 import { HookRegistry } from './hook.registry';
 import { EmitterWebhookEventName } from '@octokit/webhooks/dist-types/types';
 import { Probot } from 'probot';
-import * as dotenv from 'dotenv';
 import SmeeClient from 'smee-client';
 import { HookConfig } from './interfaces/hook.config';
 import { loadConfigUtil } from './load-config.util';
-
-dotenv.config();
 
 @Injectable()
 export class HookOrchestrator
