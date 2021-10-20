@@ -5,7 +5,6 @@ export * from './hook.constant';
 export * from './hook.explorer';
 export * from './hook.messages';
 export * from './hook.registry';
-export * from './hook.service';
 export * from './hook.controller';
 export * from './hook.orchestrator';
 export * from './hook-metadata.accessor';

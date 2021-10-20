@@ -9,8 +9,11 @@ import { v4 } from 'uuid';
 import { Request } from 'express';
 import { HookRegistry } from './hook.registry';
 import { EmitterWebhookEventName } from '@octokit/webhooks/dist-types/types';
+import { Probot } from 'probot';
 import * as dotenv from 'dotenv';
-import { HookService } from './hook.service';
+import SmeeClient from 'smee-client';
+import { HookConfig } from './interfaces/hook.config';
+import { loadConfigUtil } from './load-config.util';
 
 dotenv.config();
 
@@ -22,14 +25,30 @@ export class HookOrchestrator
 
   private readonly hooks: Record<string, any> = {};
 
-  constructor(
-    private readonly hookRegistry: HookRegistry,
-    private readonly hookService: HookService,
-  ) {}
+  private readonly _config: HookConfig;
+
+  private readonly probot: Probot;
+
+  private smee: any;
+
+  constructor(private readonly hookRegistry: HookRegistry) {
+    this._config = loadConfigUtil();
+    this.probot = new Probot({
+      appId: this._config.appId,
+      privateKey: this._config.privateKey,
+      secret: this._config.webhookSecret,
+      baseUrl: this._config.ghUrl,
+    });
+  }
 
   onApplicationBootstrap(): any {
-    if (!_.isEmpty(this.hookService.config('webhookProxy'))) {
-      this.hookService.startProxy();
+    if (!_.isEmpty(this._config.ghWebhookProxy)) {
+      this.smee = new SmeeClient({
+        source: this._config.ghWebhookProxy as string,
+        target: this._config.ghWebhookPath as string,
+        logger: console,
+      });
+      this.smee.start();
     }
 
     this.mountHooks();
@@ -41,7 +60,7 @@ export class HookOrchestrator
   }
 
   mountHooks() {
-    this.hookService.probot
+    this.probot
       .load(
         (app: {
           on: (arg0: any, arg1: (context: any) => Promise<void>) => any;

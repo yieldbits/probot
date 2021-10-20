@@ -7,6 +7,7 @@
   "url": "https://github.com/nestjs-shared/probot#readme",
   "scripts": {
     "build": "rimraf -rf dist && tsc -p tsconfig.json",
+    "start:dev": "rimraf -rf dist && tsc -p tsconfig.json --watch",
     "commit": "git add . && cz",
     "format": "prettier **/**/*.ts --ignore-path ./.prettierignore --write",
     "lint": "eslint 'lib/**/*.ts' --fix",
@@ -15,9 +16,7 @@
     "release": "semantic-release"
   },
   "dependencies": {
-    "@octokit/auth-app": "^3.6.1",
-    "@octokit/rest": "^18.12.0",
-    "@octokit/webhooks": "^9.17.0",
+    "@octokit/webhooks": "^9.15.0",
     "@probot/get-private-key": "^1.1.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
