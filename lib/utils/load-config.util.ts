@@ -11,7 +11,7 @@ export const loadConfigUtil = (): HookConfig => {
       env: { PRIVATE_KEY: process.env.GH_PRIVATE_KEY },
     }) as string,
     webhookSecret: process.env.GH_WEBHOOK_SECRET,
-    ghUrl: process.env.GH_URL || 'github.com',
+    ghUrl: process.env.GH_URL || 'https://api.github.com',
     ghWebhookProxy: process.env.GH_WEBHOOK_PROXY_URL as string,
     ghWebhookPath: process.env.GH_WEBHOOK_PATH as string,
     ghClientId: process.env.GH_CLIENT_ID as string,
