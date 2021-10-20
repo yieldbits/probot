@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/nestjs-shared/probot/compare/v1.2.3...v1.3.0) (2021-10-20)
+
+
+### Features
+
+* **octokit:** add utils to create probot, octokit, smee objects ([c4f4470](https://github.com/nestjs-shared/probot/commit/c4f447026d913b1e7b1c8957c30fabd50c23a229))
+
 ## [1.2.3](https://github.com/nestjs-shared/probot/compare/v1.2.2...v1.2.3) (2021-10-20)
 
 
