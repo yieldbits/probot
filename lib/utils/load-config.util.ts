@@ -1,6 +1,7 @@
-import { HookConfig } from './interfaces/hook.config';
+import { HookConfig } from '../interfaces/hook.config';
 import { getPrivateKey } from '@probot/get-private-key';
 import * as dotenv from 'dotenv';
+
 dotenv.config();
 
 export const loadConfigUtil = (): HookConfig => {
@@ -13,5 +14,7 @@ export const loadConfigUtil = (): HookConfig => {
     ghUrl: process.env.GH_URL || 'github.com',
     ghWebhookProxy: process.env.GH_WEBHOOK_PROXY_URL as string,
     ghWebhookPath: process.env.GH_WEBHOOK_PATH as string,
+    ghClientId: process.env.GH_CLIENT_ID as string,
+    ghClientSecret: process.env.GH_CLIENT_SECRET as string,
   };
 };

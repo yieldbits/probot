@@ -10,9 +10,10 @@ import { Request } from 'express';
 import { HookRegistry } from './hook.registry';
 import { EmitterWebhookEventName } from '@octokit/webhooks/dist-types/types';
 import { Probot } from 'probot';
-import SmeeClient from 'smee-client';
 import { HookConfig } from './interfaces/hook.config';
-import { loadConfigUtil } from './load-config.util';
+import { loadConfigUtil } from './utils';
+import { createProbot } from './utils';
+import { createSmee } from './utils';
 
 @Injectable()
 export class HookOrchestrator
@@ -30,22 +31,12 @@ export class HookOrchestrator
 
   constructor(private readonly hookRegistry: HookRegistry) {
     this._config = loadConfigUtil();
-    this.probot = new Probot({
-      appId: this._config.appId,
-      privateKey: this._config.privateKey,
-      secret: this._config.webhookSecret,
-      baseUrl: this._config.ghUrl,
-    });
+    this.probot = createProbot();
   }
 
   onApplicationBootstrap(): any {
     if (!_.isEmpty(this._config.ghWebhookProxy)) {
-      this.smee = new SmeeClient({
-        source: this._config.ghWebhookProxy as string,
-        target: this._config.ghWebhookPath as string,
-        logger: console,
-      });
-      this.smee.start();
+      this.smee = createSmee();
     }
 
     this.mountHooks();

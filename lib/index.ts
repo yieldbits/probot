@@ -8,4 +8,5 @@ export * from './hook.registry';
 export * from './hook.controller';
 export * from './hook.orchestrator';
 export * from './hook-metadata.accessor';
-export * from 'probot';
+export * from './utils';
+export { Context } from 'probot';

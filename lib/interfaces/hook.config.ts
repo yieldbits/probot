@@ -5,4 +5,6 @@ export interface HookConfig {
   ghUrl?: string;
   ghWebhookProxy?: string;
   ghWebhookPath?: string;
+  ghClientId?: string;
+  ghClientSecret?: string;
 }
