@@ -1,3 +1,10 @@
+# [1.4.0](https://github.com/nestjs-shared/probot/compare/v1.3.1...v1.4.0) (2021-10-20)
+
+
+### Features
+
+* **octokit:** add ability to pass auth options ([6729375](https://github.com/nestjs-shared/probot/commit/67293752d3116a5ad7736bf7e36d8b6968b5d42e))
+
 ## [1.3.1](https://github.com/nestjs-shared/probot/compare/v1.3.0...v1.3.1) (2021-10-20)
 
 
