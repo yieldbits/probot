@@ -1,3 +1,10 @@
+## [1.2.2](https://github.com/nestjs-shared/probot/compare/v1.2.1...v1.2.2) (2021-10-20)
+
+
+### Bug Fixes
+
+* **config:** revert config loader to defaults ([161a93e](https://github.com/nestjs-shared/probot/commit/161a93e6ea16a57111d8602cf0a32e22c39171e8))
+
 ## [1.2.1](https://github.com/nestjs-shared/probot/compare/v1.2.0...v1.2.1) (2021-10-19)
 
 
