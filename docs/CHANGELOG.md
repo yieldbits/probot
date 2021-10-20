@@ -1,3 +1,10 @@
+## [1.2.3](https://github.com/nestjs-shared/probot/compare/v1.2.2...v1.2.3) (2021-10-20)
+
+
+### Bug Fixes
+
+* **loadconfig:** add github.com as default for GH_URL ([21a504c](https://github.com/nestjs-shared/probot/commit/21a504cfc429d03e6166303be596d7c996656a22))
+
 ## [1.2.2](https://github.com/nestjs-shared/probot/compare/v1.2.1...v1.2.2) (2021-10-20)
 
 
