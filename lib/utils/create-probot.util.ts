@@ -1,7 +1,7 @@
 import { loadConfigUtil } from './load-config.util';
 import { Probot } from 'probot';
 
-export const createProbot = () => {
+export const createProbot = (): Probot => {
   const config = loadConfigUtil();
   return new Probot({
     appId: config.appId,

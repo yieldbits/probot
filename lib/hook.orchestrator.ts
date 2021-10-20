@@ -37,6 +37,7 @@ export class HookOrchestrator
   onApplicationBootstrap(): any {
     if (!_.isEmpty(this._config.ghWebhookProxy)) {
       this.smee = createSmee();
+      this.smee.start();
     }
 
     this.mountHooks();
