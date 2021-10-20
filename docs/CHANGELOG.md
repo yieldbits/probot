@@ -1,3 +1,10 @@
+## [1.4.1](https://github.com/nestjs-shared/probot/compare/v1.4.0...v1.4.1) (2021-10-20)
+
+
+### Bug Fixes
+
+* **types:** export Octokit from defaults ([bbe402d](https://github.com/nestjs-shared/probot/commit/bbe402d8f739c56906dbd48d0c4efcf166293b5c))
+
 # [1.4.0](https://github.com/nestjs-shared/probot/compare/v1.3.1...v1.4.0) (2021-10-20)
 
 
