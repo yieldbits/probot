@@ -9,4 +9,5 @@ export * from './hook.controller';
 export * from './hook.orchestrator';
 export * from './hook-metadata.accessor';
 export * from './utils';
+export { Octokit } from '@octokit/rest';
 export { Context } from 'probot';
