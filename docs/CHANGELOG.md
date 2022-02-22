@@ -1,3 +1,10 @@
+## [1.4.3](https://github.com/nestjs-shared/probot/compare/v1.4.2...v1.4.3) (2022-02-22)
+
+
+### Bug Fixes
+
+* **utils:** rename craeteOctokit to initOctokit ([948b717](https://github.com/nestjs-shared/probot/commit/948b717e70e7e270e3459774245936c300489ab1))
+
 ## [1.4.2](https://github.com/nestjs-shared/probot/compare/v1.4.1...v1.4.2) (2021-10-20)
 
 
