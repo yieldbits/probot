@@ -2,7 +2,7 @@ import { Octokit } from '@octokit/rest';
 import { loadConfigUtil } from './load-config.util';
 import { createAppAuth } from '@octokit/auth-app';
 
-export const createOctokit = (authOptions: any) => {
+export const initOctokit = (authOptions: any) => {
   const config = loadConfigUtil();
   return new Octokit({
     authStrategy: createAppAuth,
